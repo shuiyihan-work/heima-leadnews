@@ -35,6 +35,8 @@ Redis可视化工具：Another Redis Desktop Manager
 
 ## 后端微服务设计
 
+### 模块划分
+
 【父项目下分4个公共子项目】：
 
 - heima-leadnews-common : 是整个工程的配置核心，包括所有集成三方框架的配置定义，比如redis、kafka等。除此之外还包括项目每个模块及整个项目的常量定义;
@@ -52,3 +54,50 @@ Redis可视化工具：Another Redis Desktop Manager
 - heima-leadnews-wemedia：用于实现自媒体管理端的功能；
 - heima-leadnews-admin：用于实现后台管理系统的功能；
 - heima-leadnews-gateway：网关
+
+### 开发规范
+
+#### 开发原则
+
+- 自顶向下的设计原则：功能应该从表现层分析再到控制层、服务层、持久层逐层设计
+- 自底向上的开发原则：上层需调用下层，因此开发应从底层向上层逐层开发
+
+项目中开发的层次次序参考DB->中间件->持久层->服务层->控制层
+
+- 单一职责的开发原则：类或者方法提供的功能应该单一明确，特别越底层越应单一职责，以便维护
+
+项目中Mapper方法必须功能单一，参数明确，拒绝两种以上的持久逻辑使用同一个Mapper方法
+
+- 依赖倒置的开发原则：上层依赖下层，是依赖下层接口，并不是依赖下层的实现
+
+项目中每层都是通过接口调用Controller->Service->Mapper
+
+#### 开发步骤
+
+- 明确类定义：明确哪些是重用类，哪些是需要新增的类
+- 明确主键规则：确认操作表的ID生成规则，自增或id_work
+- ControllerApi定义：定义接口
+- Mapper实现:使用mybatis-plus封装的方法还是自定义mapper映射
+- Service实现：可用通过时序图帮助我们梳理实现逻辑
+- Controller实现：简单的Service层调用
+- 单元测试或接口测试或前端直接联调测试
+
+#### 接口版本规范说明
+
+随着业务的复杂，同一个接口可能出现多个版本，为了方便后期切换和AB测试，需要定义接口的版本号
+
+- 在某一个微服务下访问controller的时候在包名下加一个版本号,如下
+
+```properties
+com.heima.article.controller.v1
+```
+
+
+
+- 在访问具体的接口方法的url映射的时候也应该加上版本说明，如下：
+
+
+
+```java
+@RequestMapping("/api/v1/article")
+```

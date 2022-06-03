@@ -348,4 +348,34 @@
         </dependencies>
     </dependencyManagement>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <build>
+                <filters>
+                    <filter>maven-dev.yml</filter>
+                </filters>
+            </build>
+        </profile>
+        <profile>
+            <id>test</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <filters>
+                    <filter>maven-test.yml</filter>
+                </filters>
+            </build>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <build>
+                <filters>
+                    <filter>maven-prod.yml</filter>
+                </filters>
+            </build>
+        </profile>
+    </profiles>
+
 </project>

@@ -4,17 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19431f9a-3de2-4406-8c6b-2dd6a254766a" name="Changes" comment="添加readme文件">
-      <change afterPath="$PROJECT_DIR$/heima-leadnews-apis/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heima-leadnews-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heima-leadnews-model/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heima-leadnews-model/src/main/java/com/heima/model/common/dtos/PageRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heima-leadnews-model/src/main/java/com/heima/model/common/dtos/PageResponseResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heima-leadnews-model/src/main/java/com/heima/model/common/dtos/ResponseResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heima-leadnews-model/src/main/java/com/heima/model/common/enums/AppHttpCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heima-leadnews-utils/pom.xml" afterDir="false" />
+    <list default="true" id="19431f9a-3de2-4406-8c6b-2dd6a254766a" name="Changes" comment="更新开发规范和多环境配置">
+      <change afterPath="$PROJECT_DIR$/heima-leadnews-admin/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heima-leadnews-admin/src/main/resources/application-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heima-leadnews-admin/src/main/resources/application-test.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heima-leadnews-admin/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heima-leadnews-apis/src/main/resources/application-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heima-leadnews-apis/src/main/resources/application-test.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heima-leadnews-apis/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heima-leadnews-model/src/main/java/com/heima/model/common/model/admin/AdChannel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heima-leadnews-apis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/heima-leadnews-apis/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heima-leadnews-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/heima-leadnews-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heima-leadnews-model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/heima-leadnews-model/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heima-leadnews-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/heima-leadnews-utils/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +60,7 @@
     </option>
     <option name="enabledProfiles">
       <list>
-        <option value="dev" />
+        <option value="test" />
       </list>
     </option>
   </component>
@@ -73,7 +78,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "/Volumes/code/java/heima-leadnews",
+    "last_opened_file_path": "/Volumes/code/java/heima-leadnews/heima-leadnews-utils/src/main/resources",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "704969446df066f93627c3d209a823f9"
@@ -81,8 +86,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/main/java" />
+      <recent name="$PROJECT_DIR$/heima-leadnews-utils/src/main/resources" />
+      <recent name="$PROJECT_DIR$/heima-leadnews-admin/src/main/resources" />
+      <recent name="$PROJECT_DIR$/heima-leadnews-common/src/main/resources" />
+      <recent name="$PROJECT_DIR$/heima-leadnews-model/src/main/resources" />
+      <recent name="$PROJECT_DIR$/heima-leadnews-apis/src/main/resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -107,7 +115,8 @@
       <updated>1654248528866</updated>
       <workItem from="1654248530002" duration="8931000" />
       <workItem from="1654262130173" duration="6106000" />
-      <workItem from="1654274209634" duration="1136000" />
+      <workItem from="1654274209634" duration="2206000" />
+      <workItem from="1654317673792" duration="2917000" />
     </task>
     <task id="LOCAL-00001" summary="搭建框架，更新父pom">
       <created>1654273865771</created>
@@ -123,7 +132,28 @@
       <option name="project" value="LOCAL" />
       <updated>1654273879629</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="搭建初始公共模块">
+      <created>1654275475097</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1654275475097</updated>
+    </task>
+    <task id="LOCAL-00004" summary="添加通用请求和返回">
+      <created>1654275507076</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654275507076</updated>
+    </task>
+    <task id="LOCAL-00005" summary="更新开发规范和多环境配置">
+      <created>1654275559198</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654275559198</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +173,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="搭建框架，更新父pom" />
     <MESSAGE value="添加readme文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加readme文件" />
+    <MESSAGE value="搭建初始公共模块" />
+    <MESSAGE value="添加通用请求和返回" />
+    <MESSAGE value="更新开发规范和多环境配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新开发规范和多环境配置" />
   </component>
 </project>

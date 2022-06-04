@@ -14,10 +14,12 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>heima-leadnews-apis</module>
         <module>heima-leadnews-common</module>
         <module>heima-leadnews-model</module>
         <module>heima-leadnews-utils</module>
+        <module>heima-leadnews-admin</module>
+
+        <module>heima-leadnews-apis</module>
     </modules>
 
     <properties>
@@ -350,31 +352,28 @@
 
     <profiles>
         <profile>
+            <!--不同环境Profile的唯一id-->
             <id>dev</id>
-            <build>
-                <filters>
-                    <filter>maven-dev.yml</filter>
-                </filters>
-            </build>
-        </profile>
-        <profile>
-            <id>test</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <build>
-                <filters>
-                    <filter>maven-test.yml</filter>
-                </filters>
-            </build>
+            <properties>
+                <!--profiles.active是自定义的字段（名字随便起，要保持和resources下application-dev.yml 后缀名相同），自定义字段可以有多个-->
+                <profiles.active>dev</profiles.active>
+            </properties>
         </profile>
         <profile>
             <id>prod</id>
-            <build>
-                <filters>
-                    <filter>maven-prod.yml</filter>
-                </filters>
-            </build>
+            <properties>
+                <profiles.active>prod</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <profiles.active>test</profiles.active>
+            </properties>
+            <activation>
+                <!--默认激活测试环境-->
+                <activeByDefault>true</activeByDefault>
+            </activation>
         </profile>
     </profiles>
 
